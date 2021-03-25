@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/BottomNavBar/Profile/CustomShape/customShape.dart';
+import 'package:smiles/BottomNavBar/Profile/EditProfile/editProfile.dart';
 import 'package:smiles/BottomNavBar/Profile/components/widget/dobAndPhoneNumberTile.dart';
 import 'package:smiles/models/dentalExperiance.dart';
 
@@ -12,6 +13,7 @@ String name = 'Eric Su',
     intro =
         'Hi there! \nLorem ipsum dolor sit amet, consectetur \nadipisimg elit.In egetas velit eget metus\nsemper fringilla.';
 String dOB = 'DOB: 21-03-1993', phonenumber = '+912345678';
+String edit = 'Edit';
 
 class _ProfileAboutState extends State<ProfileAbout> {
   @override
@@ -37,10 +39,28 @@ class _ProfileAboutState extends State<ProfileAbout> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  name,
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                child: Row(
+                  children: [
+                    Text(
+                      name,
+                      style: TextStyle(color: Colors.black, fontSize: 16),
+                    ),
+                    Spacer(),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditProfile(),
+                          ),
+                        );
+                      },
+                      child: Text(edit),
+                    ),
+                    Icon(Icons.edit)
+                  ],
                 ),
               ),
               Center(
@@ -67,7 +87,7 @@ class _ProfileAboutState extends State<ProfileAbout> {
               ),
               Container(
                 margin: EdgeInsets.all(10),
-                height: 200,
+                height: 180,
                 child: ListView.builder(
                   itemCount: dentalexperiance.length,
                   itemBuilder: (context, index) {

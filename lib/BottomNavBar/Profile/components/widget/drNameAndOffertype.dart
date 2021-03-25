@@ -11,7 +11,7 @@ Widget drNameAndType(String txt1, txt2) {
               fontSize: 18,
             ),
             children: [
-              TextSpan(text: txt1 + '\n'),
+              TextSpan(text: txt1 + "\n"),
               TextSpan(text: txt2, style: TextStyle(fontSize: 13)),
             ]),
       ),

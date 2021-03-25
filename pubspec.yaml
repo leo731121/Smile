@@ -35,6 +35,7 @@ dependencies:
   date_time_picker: ^2.0.0
   persistent_bottom_nav_bar: ^4.0.0
   flutter_rating_bar: ^4.0.0
+  device_preview: ^0.7.1
 
 dev_dependencies:
   flutter_test:
