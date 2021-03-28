@@ -169,39 +169,41 @@ class TopBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          height: 40,
-          width: 250,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(0.0, 1.0), //(x,y)
-                blurRadius: 6.0,
-              ),
-            ],
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search Dentist',
-                hintStyle: TextStyle(fontSize: 15),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(40),
+        Center(
+          child: Container(
+            height: 40,
+            width: 250,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  offset: Offset(0.0, 1.0), //(x,y)
+                  blurRadius: 6.0,
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20, top: 20),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search Dentist',
+                  hintStyle: TextStyle(fontSize: 15),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(40),
+                    ),
                   ),
                 ),
+                keyboardType: TextInputType.name,
               ),
-              keyboardType: TextInputType.name,
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.only(right: 20, left: 25),
           child: GestureDetector(
             onTap: () => {print('profile image clicked')},
             child: CircleAvatar(

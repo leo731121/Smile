@@ -164,7 +164,7 @@ class _RootPageState extends State<RootPage> {
             duration: Duration(milliseconds: 200),
           ),
           navBarStyle:
-              NavBarStyle.style8, // Choose the nav bar style with this property
+              NavBarStyle.style6, // Choose the nav bar style with this property
         ),
       ),
     );

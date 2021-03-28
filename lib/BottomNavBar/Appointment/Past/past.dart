@@ -44,7 +44,7 @@ class _PastState extends State<Past> {
     );
   }
 
-  animateItemBuilder(int index) {
+  Widget animateItemBuilder(int index) {
     return AnimatedBuilder(
       animation: pageController,
       builder: (context, child) {

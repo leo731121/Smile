@@ -16,6 +16,7 @@ class _AppointmentState extends State<Appointment> {
     Upcoming(),
     Past(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +95,7 @@ class _AppointmentState extends State<Appointment> {
           },
           child: Container(
             height: 40,
-            width: 194,
+            width: 196,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
               color: index == selectedindex ? Colors.blue[400] : Colors.white,

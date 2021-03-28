@@ -13,7 +13,7 @@ class SubmitButtonusingIcon extends StatelessWidget {
         Center(
           child: Container(
             height: 50,
-            width: 210,
+            width: 200,
             child: GestureDetector(
               onTap: press,
               child: Container(
@@ -43,7 +43,7 @@ class SubmitButtonusingIcon extends StatelessWidget {
           right: 120,
           top: 5,
           child: CircleAvatar(
-            radius: 20,
+            radius: 21,
             backgroundColor: Colors.white,
             child: Icon(Icons.done),
           ),

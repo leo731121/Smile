@@ -49,6 +49,6 @@ class MyClipper extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return null;
+    return false;
   }
 }

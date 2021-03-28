@@ -19,14 +19,14 @@ List<ExperianceDental> dentalexperiance = [
     location: 'RYK, Sadiq Abad',
   ),
   ExperianceDental(
-    imgPath: 'assets/images/welcome13.jpg',
+    imgPath: 'assets/images/demodata.jpg',
     date: '23 Nov',
     service: 'Braces',
     servicetype: 'Orthodontist',
     location: 'RYK, Sadiq Abad',
   ),
   ExperianceDental(
-    imgPath: 'assets/images/welcome13.jpg',
+    imgPath: 'assets/images/photography-1166895_640.jpg',
     date: '23 Nov',
     service: 'Braces',
     servicetype: 'Orthodontist',
