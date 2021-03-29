@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:smiles/BottomNavBar/Appointment/AppointmentDetails/components/submitButton.dart';
 import 'package:smiles/widgets/boldTextBlackColor.dart';
-import 'package:smiles/widgets/simpleRichText.dart';
 
 class FeedBack extends StatelessWidget {
-  String name = 'Eric Su',
+  final String name = 'Eric Su',
       date = '23 Nov',
       location = 'RYK,SadiqAbad',
       serviceoffer = 'Orthodontist';

@@ -1,12 +1,11 @@
 import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
-import 'package:smiles/BottomNavBar/chat/components/messageSendingStye.dart';
 
 class ChatBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String name = "Eric Su", status = 'Online';
-    var red = Colors.red;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -150,35 +149,6 @@ class ChatBox extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  Column(
-                    children: [
-                      Center(
-                        child: Container(
-                          height: 25,
-                          width: 100,
-                          child: Bubble(
-                            color: Color.fromRGBO(212, 234, 244, 1.0),
-                            child: Text('TODAY',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 11.0)),
-                          ),
-                        ),
-                      ),
-                      Bubble(
-                        child: Text('Hello, World!'),
-                      ),
-                      Bubble(
-                        margin: BubbleEdges.only(top: 10),
-                        color: Color.fromRGBO(225, 255, 199, 1.0),
-                        child:
-                            Text('Hello, World!', textAlign: TextAlign.right),
-                      ),
-                      Bubble(
-                        margin: BubbleEdges.only(top: 10),
-                        child: Text('Hi, developer!'),
-                      ),
-                    ],
                   ),
                 ],
               ),

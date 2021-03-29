@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:smiles/models/dentistProfileMedia.dart';
 import 'package:smiles/widgets/simpleRichText.dart';
 
 import 'components/mediaDrProfile.dart';
 
 class DentistProfile extends StatelessWidget {
-  String doctorName = 'Amelia';
-  String aboutDescription =
+  final String doctorName = 'Amelia';
+  final String aboutDescription =
       'Lorem ipsum dolor sit amet, consectetur adipisimg elit.In egetas velit eget metus semper fringilla.';
 
   @override

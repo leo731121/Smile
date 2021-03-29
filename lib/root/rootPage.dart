@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
@@ -19,6 +20,7 @@ class RootPage extends StatefulWidget {
 class _RootPageState extends State<RootPage> {
   PersistentTabController _controller;
   bool _hideNavBar;
+  BuildContext context;
 
   @override
   void initState() {
@@ -56,7 +58,7 @@ class _RootPageState extends State<RootPage> {
         activeColorPrimary: Colors.blue,
         inactiveColorPrimary: Colors.grey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
-          initialRoute: '/',
+          initialRoute: '/ChatBox',
           routes: {},
         ),
       ),
