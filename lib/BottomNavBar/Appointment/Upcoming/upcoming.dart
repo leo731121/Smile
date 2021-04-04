@@ -5,26 +5,29 @@ class Upcoming extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Image.asset(
-              'assets/images/magnifying-glass-1020142_640.jpg',
-              height: 200,
-              width: 200,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Image.asset(
+                'assets/images/magnifying-glass-1020142_640.jpg',
+                height: 300,
+                width: 300,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            'You have no scheduled \n appointments. Book one?',
-            style: TextStyle(color: Colors.grey, fontSize: 16),
-            textAlign: TextAlign.center,
-          )
-        ],
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'You have no scheduled \n appointments. Book one?',
+              style: TextStyle(color: Colors.grey, fontSize: 16),
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
       ),
     );
   }

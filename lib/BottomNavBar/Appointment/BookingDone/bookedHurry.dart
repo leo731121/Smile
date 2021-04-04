@@ -17,12 +17,12 @@ class ShowBookedAppointment extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 40),
             child: boldTextBlackColor('Hurry, Booked!'),
           ),
-          Padding(padding: EdgeInsets.only(top: 40), child: buildOvalimage()),
+          Padding(padding: EdgeInsets.only(top: 80), child: buildOvalimage()),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 100),
+            padding: EdgeInsets.symmetric(vertical: 40),
           ),
           buildappointmentShowDrNameandTime(),
           Padding(

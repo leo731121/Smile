@@ -14,18 +14,13 @@ class ProfileImage extends StatefulWidget {
 }
 
 class _ProfileImageState extends State<ProfileImage> {
-  File image;
-  final picker = ImagePicker();
-
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+  File file;
+  void pickImage() async {
+    PickedFile pickedFile =
+        await ImagePicker().getImage(source: ImageSource.gallery);
 
     setState(() {
-      if (pickedFile != null) {
-        image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
+      file = File(pickedFile.path.toString());
     });
   }
 
@@ -66,7 +61,7 @@ class _ProfileImageState extends State<ProfileImage> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            getImage();
+                            pickImage();
                           });
                         },
                         child: Stack(children: [
@@ -160,7 +155,7 @@ class _ProfileImageState extends State<ProfileImage> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            getImage();
+                            pickImage();
                           });
                         },
                         child: Stack(children: [

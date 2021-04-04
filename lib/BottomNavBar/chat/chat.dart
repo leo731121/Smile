@@ -1,4 +1,3 @@
-import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 
 class ChatBox extends StatelessWidget {
@@ -9,7 +8,7 @@ class ChatBox extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

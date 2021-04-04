@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 import 'package:smiles/BottomNavBar/Appointment/SelectDoctorBooking/selectDentist.dart';
+import 'package:smiles/BottomNavBar/Home/home.dart';
 import 'package:smiles/widgets/boldTextBlackColor.dart';
+import 'package:smiles/widgets/build_MenuSideMenuData.dart';
 import 'package:smiles/widgets/custom_button.dart';
 import 'Past/past.dart';
 import 'Upcoming/upcoming.dart';
@@ -16,44 +19,63 @@ class _AppointmentState extends State<Appointment> {
     Upcoming(),
     Past(),
   ];
+  final GlobalKey<SideMenuState> stateMenu = GlobalKey<SideMenuState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50),
-        child: Column(
+    return SideMenu(
+      key: stateMenu,
+      background: Color(0xff5D3CBF),
+      type: SideMenuType.shrikNRotate,
+      menu: buildMenuSideMenuData(),
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: IconButton(
+            icon: Icon(
+              Icons.menu,
+              color: Colors.blue[200],
+            ),
+            onPressed: () {
+              final state = stateMenu.currentState;
+              state.openSideMenu();
+
+              print('Drawer is pressed');
+            },
+          ),
+          actions: [
+            TopBar(stateMenu: stateMenu),
+          ],
+        ),
+        body: Column(
           children: [
+            Center(child: boldTextBlackColor('My Appointments')),
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
-              child: Center(child: boldTextBlackColor('My Appointments')),
+              child: tabSelector(),
             ),
             Expanded(
-              flex: 0,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 10),
-                child: tabSelector(),
+              child: (apptType[selectedindex]),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                bottom: 70,
+              ),
+              child: customButton(
+                'Book Now',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SelectDentist(),
+                    ),
+                  );
+                },
               ),
             ),
-            Expanded(child: (apptType[selectedindex])),
-            Expanded(
-              flex: 0,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 20, top: 10),
-                child: customButton(
-                  'Book Now',
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SelectDentist(),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            )
           ],
         ),
       ),

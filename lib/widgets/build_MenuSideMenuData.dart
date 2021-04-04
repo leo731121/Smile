@@ -13,6 +13,16 @@ SingleChildScrollView buildMenuSideMenuData() {
             backgroundImage: AssetImage('assets/images/teeth-1670434_640.png'),
           ),
         ),
+        Center(
+          child: Text(
+            'Hello!',
+            style: TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
         BuildSideMenuTileWidget(
           title: 'Home',
           iconData: (Icons.home),

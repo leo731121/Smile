@@ -40,7 +40,13 @@ dependencies:
   device_preview: ^0.7.1
   intl: ^0.17.0
   date_format:
-  bubble: ^1.2.1
+  lottie: ^1.0.1
+  animated_text_kit: ^4.1.1
+  widget_circular_animator: ^0.1.5+1
+  flutter_villains: ^1.2.1
+  
+  
+  
 
 
 dev_dependencies:
@@ -62,6 +68,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/lottie/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

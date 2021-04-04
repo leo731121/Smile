@@ -10,11 +10,15 @@ class QuickTreatments {
 
 List<QuickTreatments> quickTreatments = [
   QuickTreatments(
-      clr: Colors.green, pic: 'assets/images/home.png', name: 'Clear Aligners'),
+      clr: Color(0xff5f939a),
+      pic: 'assets/icons/clearAligners.jpg',
+      name: 'Clear\nAligners'),
   QuickTreatments(
-      clr: Colors.purple,
-      pic: 'assets/images/home.png',
-      name: 'Teeth Whitening'),
+      clr: Color(0xff5b8a72),
+      pic: 'assets/icons/teehtwhitening.jpg',
+      name: 'Teeth\nWhitening'),
   QuickTreatments(
-      clr: Colors.blue[400], pic: 'assets/images/home.png', name: 'Braces')
+      clr: Color(0xff56776c),
+      pic: 'assets/icons/braces.jpg',
+      name: 'Metal\nBraces')
 ];

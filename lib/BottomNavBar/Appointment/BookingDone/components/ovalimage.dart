@@ -23,7 +23,7 @@ Padding buildOvalimage() {
                     backgroundColor: Colors.white,
                     radius: 30,
                     child: Icon(
-                      Icons.speaker_phone,
+                      Icons.done_outline_outlined,
                       color: Colors.blue[400],
                     )),
               ),

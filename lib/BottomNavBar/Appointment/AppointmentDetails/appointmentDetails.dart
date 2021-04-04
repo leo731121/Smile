@@ -193,8 +193,17 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Text(widget.drDetails.rating),
+                  padding: const EdgeInsets.only(right: 10, top: 10),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                        size: 12,
+                      ),
+                      Text(widget.drDetails.rating),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -204,11 +213,11 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                   color: Colors.grey,
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 10,
                 ),
                 Text(
                   widget.drDetails.price,
-                  style: TextStyle(fontSize: 10),
+                  style: TextStyle(fontSize: 15),
                 )
               ],
             ),

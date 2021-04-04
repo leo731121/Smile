@@ -36,9 +36,12 @@ Expanded selectDentistTile() {
               child: GestureDetector(
                 child: Row(
                   children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage((dentist[index].imgPath)),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage((dentist[index].imgPath)),
+                      ),
                     ),
                     SizedBox(
                       width: 10,
@@ -75,7 +78,16 @@ Expanded selectDentistTile() {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Text(dentist[index].rating),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                  size: 12,
+                                ),
+                                Text(dentist[index].rating),
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 10,

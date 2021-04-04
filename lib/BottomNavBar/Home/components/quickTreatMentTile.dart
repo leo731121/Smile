@@ -29,16 +29,27 @@ class QuickTreatmentTile extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Stack(
                 children: [
-                  Image.asset(quickTreatments[index].pic),
-                  SizedBox(
-                    height: 10,
+                  Positioned(
+                    top: 20,
+                    left: 40,
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage(quickTreatments[index].pic),
+                      radius: 35,
+                      backgroundColor: Colors.transparent,
+                    ),
                   ),
-                  Text(
-                    quickTreatments[index].name,
-                    style: TextStyle(color: Colors.white),
+                  Positioned(
+                    bottom: 30,
+                    left: 40,
+                    child: Text(
+                      quickTreatments[index].name,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),

@@ -26,19 +26,26 @@ class _PastState extends State<Past> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          child: PageView.builder(
-              onPageChanged: (value) {
-                setState(
-                  () {
-                    currentPage = value;
-                  },
-                );
-              },
-              controller: pageController,
-              itemBuilder: (context, index) => animateItemBuilder(index)),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height - 400,
+                child: PageView.builder(
+                    onPageChanged: (value) {
+                      setState(
+                        () {
+                          currentPage = value;
+                        },
+                      );
+                    },
+                    controller: pageController,
+                    itemBuilder: (context, index) => animateItemBuilder(index)),
+              ),
+            ),
+          ],
         ),
       ),
     );

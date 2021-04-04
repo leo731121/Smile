@@ -6,7 +6,7 @@ Widget buildtoplogo() {
       padding: const EdgeInsets.symmetric(vertical: 60),
       child: CircleAvatar(
         radius: 60,
-        backgroundImage: AssetImage('assets/images/teeth-1670434_640.png'),
+        backgroundImage: AssetImage('assets/images/classicTeeth.webp'),
       ),
     ),
   );

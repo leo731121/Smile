@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smiles/Onboarding_Screens/Verify_Number/verify_number.dart';
 import 'package:smiles/responsive.dart';
@@ -41,7 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                       CircleAvatar(
                         radius: 110,
                         backgroundImage: AssetImage(
-                          'assets/images/welcome13.jpg',
+                          'assets/images/happynurse.jpg',
                         ),
                       ),
                       Positioned(
@@ -51,9 +52,10 @@ class WelcomeScreen extends StatelessWidget {
                             radius: 30,
                             backgroundColor: Colors.white,
                             child: CircleAvatar(
+                              backgroundColor: Colors.blue[400],
                               radius: 25,
-                              backgroundImage: AssetImage(
-                                  'assets/images/teeth-1670434_640.png'),
+                              backgroundImage:
+                                  AssetImage('assets/icons/teeth.png'),
                             ),
                           )),
                     ],
@@ -70,7 +72,7 @@ class WelcomeScreen extends StatelessWidget {
                         simpleBlackText('Read our'),
 
                         /*
-                     
+
                       /// Here is the Gesture Detector ///
                       ///for "privacy policy"*/
 
@@ -91,7 +93,7 @@ class WelcomeScreen extends StatelessWidget {
                         simpleBlackText("and Continue'  "),
 
                         /*
-                     
+
                       /// Here is the Gesture Detector ///
                       ///for "Terms and services"*/
 
@@ -110,10 +112,15 @@ class WelcomeScreen extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height > 800 ? 20 : 20,
                 ),
-                customButton('Accept and Continue', () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => VerifyNumber()));
-                }),
+                customButton(
+                  'Accept and Continue',
+                  () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => VerifyNumber()));
+                  },
+                ),
                 SizedBox(
                   height: 15,
                 ),

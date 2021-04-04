@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
+import 'package:smiles/BottomNavBar/Home/home.dart';
 import 'components/selectDentistTile.dart';
 
 class SelectDentist extends StatelessWidget {
@@ -7,10 +8,24 @@ class SelectDentist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          color: Colors.black,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: [
+          TopBar(stateMenu: stateMenu),
+        ],
+      ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.only(
-          top: 70,
+          top: 10,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,7 +41,6 @@ class SelectDentist extends StatelessWidget {
               ),
             ),
             selectDentistTile()
-            //buildDoctorContact(),
           ],
         ),
       ),
