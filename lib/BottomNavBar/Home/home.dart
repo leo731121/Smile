@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-final GlobalKey<SideMenuState> stateMenu = GlobalKey<SideMenuState>();
+GlobalKey<SideMenuState> stateMenu = GlobalKey<SideMenuState>();
 
 class _HomeState extends State<Home> {
   @override
@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
       key: stateMenu,
       background: Color(0xff5D3CBF),
       type: SideMenuType.shrikNRotate,
-      menu: buildMenuSideMenuData(),
+      menu: BuildMenuSideMenuData(),
       child: Scaffold(
           appBar: buildAppBar(),
           body: SingleChildScrollView(
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
+                            horizontal: 20, vertical: 20),
                         child: boldandSimpleText(
                           'Just Smile\n',
                         ),

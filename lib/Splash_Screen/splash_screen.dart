@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: 3),
+      Duration(seconds: 4),
       () => Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => WelcomeScreen()),
@@ -42,6 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontSize: 80.0,
                 ),
                 child: AnimatedTextKit(
+                  repeatForever: false,
                   animatedTexts: [
                     WavyAnimatedText(
                       'Smile',

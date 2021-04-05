@@ -27,7 +27,7 @@ class _AppointmentState extends State<Appointment> {
       key: stateMenu,
       background: Color(0xff5D3CBF),
       type: SideMenuType.shrikNRotate,
-      menu: buildMenuSideMenuData(),
+      menu: BuildMenuSideMenuData(),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,

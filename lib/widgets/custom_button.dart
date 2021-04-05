@@ -5,7 +5,7 @@ Widget customButton(String text, Function press) {
     onTap: press,
     child: Container(
       height: 50,
-      width: 200,
+      width: 250,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(360),
         color: Color(0xff00BFFF),
