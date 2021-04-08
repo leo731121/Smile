@@ -50,33 +50,36 @@ class _AppointmentState extends State<Appointment> {
             TopBar(stateMenu: stateMenu),
           ],
         ),
-        body: Column(
-          children: [
-            Center(child: boldTextBlackColor('My Appointments')),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: tabSelector(),
-            ),
-            Expanded(
-              child: (apptType[selectedindex]),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                bottom: 70,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Column(
+            children: [
+              Center(child: boldTextBlackColor('My Appointments')),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: tabSelector(),
               ),
-              child: customButton(
-                'Book Now',
-                () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SelectDentist(),
-                    ),
-                  );
-                },
+              Expanded(
+                child: (apptType[selectedindex]),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 70,
+                ),
+                child: customButton(
+                  'Book Now',
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SelectDentist(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

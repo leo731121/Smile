@@ -1,25 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/Splash_Screen/splash_screen.dart';
+import 'package:smiles/size_config.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: SplashScreen(),
-    ),
-    // DevicePreview(
-    //   enabled: !kReleaseMode,
-    //   builder: (context) => MyApp(),
-    // ),
-  );
+  runApp(Home());
+  // MaterialApp(
+  //   home: SplashScreen(),
+  // ),
+  // DevicePreview(
+  //   enabled: !kReleaseMode,
+  //   builder: (context) => MyApp(),
+  // ),
 }
 
-class MyApp extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // locale: DevicePreview.locale(context), // Add the locale here
-      // builder: DevicePreview.appBuilder, // Add the builder here
-      home: SplashScreen(),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return OrientationBuilder(
+          builder: (context, orientation) {
+            SizeConfig().init(constraints, orientation);
+            return MaterialApp(
+              // locale: DevicePreview.locale(context), // Add the locale here
+              // builder: DevicePreview.appBuilder, // Add the builder here
+              home: SplashScreen(),
+            );
+          },
+        );
+      },
     );
   }
 }

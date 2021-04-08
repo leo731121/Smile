@@ -4,6 +4,7 @@ import 'package:smiles/BottomNavBar/Appointment/appointment.dart';
 import 'package:smiles/BottomNavBar/Home/home.dart';
 import 'package:smiles/BottomNavBar/Profile/components/widget/PaymentMethod/paymentMethod.dart';
 import 'package:smiles/pages/HelpAndSupport/helpAndSupport.dart';
+import 'package:smiles/pages/Settings/settings.dart';
 import 'package:smiles/pages/onlineConsultant.dart';
 import 'package:smiles/widgets/sideMenutile.dart';
 
@@ -127,7 +128,14 @@ class BuildMenuSideMenuData extends StatelessWidget {
           BuildSideMenuTileWidget(
             title: 'Settings',
             iconData: (Icons.settings),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Settings(),
+                ),
+              );
+            },
           ),
         ],
       ),

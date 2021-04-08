@@ -25,8 +25,11 @@ class _PaymentMethodState extends State<PaymentMethod> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
-              child: boldTextBlackColor('Payment'),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 18.0),
+              child: Center(
+                child: boldTextBlackColor('Payment'),
+              ),
             ),
             tabSelectorForGateway(),
             Expanded(
