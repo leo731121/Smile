@@ -9,6 +9,9 @@ import 'package:smiles/LoginandSignUp/login/login.dart';
 import 'package:smiles/constants.dart';
 import 'package:smiles/style.dart';
 
+import 'components/orDivider.dart';
+import 'components/socialConnected.dart';
+
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class SignUp extends StatelessWidget {
               ),
               Image.asset(
                 'assets/images/SignUp.jpg',
-                width: size.width * 0.9,
+                width: size.width * 0.7,
               ),
               TextFieldContainer(
                 child: RoundedInputField(
@@ -77,7 +80,29 @@ class SignUp extends StatelessWidget {
                     ),
                   );
                 },
-              )
+              ),
+              SizedBox(
+                height: size.height * 0.03,
+              ),
+              OrDivider(),
+              SizedBox(
+                height: size.height * 0.03,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialConnected(
+                    iconSrc: 'assets/icons/facebook.svg',
+                    press: () {},
+                  ),
+                  SocialConnected(
+                    iconSrc: 'assets/icons/twitter.svg',
+                  ),
+                  SocialConnected(
+                    iconSrc: 'assets/icons/google-plus.svg',
+                  )
+                ],
+              ),
             ],
           ),
         ),
