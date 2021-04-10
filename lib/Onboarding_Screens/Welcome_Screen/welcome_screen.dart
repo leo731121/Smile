@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smiles/LoginandSignUp/loginOrSignupSelection.dart';
 import 'package:smiles/Onboarding_Screens/Verify_Number/verify_number.dart';
 import 'package:smiles/responsive.dart';
 import 'package:smiles/style.dart';
@@ -130,7 +131,7 @@ class WelcomeScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => VerifyNumber()));
+                            builder: (context) => TabularLoginSignUp()));
                   },
                 ),
                 SizedBox(
