@@ -1,11 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:smiles/widgets/boldTextBlackColor.dart';
+import 'package:smiles/style.dart';
 import 'package:smiles/widgets/custom_TextFields.dart';
 import 'package:smiles/widgets/datePickerField.dart';
 import 'package:smiles/widgets/imageAndTitleinRow.dart';
@@ -43,7 +42,11 @@ class _EditProfileState extends State<EditProfile> {
                 vertical: 20,
               ),
               child: Center(
-                child: boldTextBlackColor('Edit your profile'),
+                child: Text(
+                  'Edit your profile',
+                  style: boldTextBlackColor,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
             Container(

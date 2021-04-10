@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 import 'package:smiles/BottomNavBar/Appointment/SelectDoctorBooking/selectDentist.dart';
 import 'package:smiles/BottomNavBar/Home/home.dart';
-import 'package:smiles/widgets/boldTextBlackColor.dart';
+import 'package:smiles/style.dart';
 import 'package:smiles/widgets/build_MenuSideMenuData.dart';
 import 'package:smiles/widgets/custom_button.dart';
 import 'Past/past.dart';
@@ -54,7 +54,12 @@ class _AppointmentState extends State<Appointment> {
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Column(
             children: [
-              Center(child: boldTextBlackColor('My Appointments')),
+              Center(
+                  child: Text(
+                'My Appointments',
+                style: boldTextBlackColor,
+                textAlign: TextAlign.center,
+              )),
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: tabSelector(),

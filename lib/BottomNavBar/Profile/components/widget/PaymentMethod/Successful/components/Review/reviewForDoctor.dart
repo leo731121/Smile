@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:smiles/BottomNavBar/Appointment/AppointmentDetails/components/submitButton.dart';
-import 'package:smiles/widgets/boldTextBlackColor.dart';
+import 'package:smiles/style.dart';
 
 class FeedBack extends StatelessWidget {
   final String name = 'Eric Su',
@@ -33,8 +33,10 @@ class FeedBack extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: Center(
-                child: boldTextBlackColor(
+                child: Text(
                   'Review Our Smile \nDentist!',
+                  style: boldTextBlackColor,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),

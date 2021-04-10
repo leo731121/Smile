@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smiles/widgets/boldTextBlackColor.dart';
+import 'package:smiles/style.dart';
 
 class SelectorTabLoginSignUp extends StatelessWidget {
   @override
@@ -22,7 +22,11 @@ class SelectorTabLoginSignUp extends StatelessWidget {
               'assets/images/loginRegister.webp',
             ),
           ),
-          boldTextWhiteColor('Smile Brings together')
+          Text(
+            'Smile Brings together',
+            style: boldTextWhiteColor,
+            textAlign: TextAlign.center,
+          )
         ],
       ),
     );

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/BottomNavBar/Appointment/appointment.dart';
-import 'package:smiles/widgets/boldTextBlackColor.dart';
+import 'package:smiles/style.dart';
 
 import 'components/ovalimage.dart';
 
-// ignore: must_be_immutable
 class ShowBookedAppointment extends StatelessWidget {
-  String getDoctorName;
-  String selectedDate = 'March 2021', selectedTime = '2 PM';
+  final String getDoctorName;
+  final String selectedDate = 'March 2021', selectedTime = '2 PM';
   ShowBookedAppointment({this.getDoctorName});
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,11 @@ class ShowBookedAppointment extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 40),
-            child: boldTextBlackColor('Hurry, Booked!'),
+            child: Text(
+              'Hurry, Booked!',
+              style: boldTextBlackColor,
+              textAlign: TextAlign.center,
+            ),
           ),
           Padding(padding: EdgeInsets.only(top: 80), child: buildOvalimage()),
           Padding(

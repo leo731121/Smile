@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smiles/widgets/boldTextBlackColor.dart';
-
+import 'package:smiles/style.dart';
 import 'Pending/pending.dart';
 import 'Successful/successful.dart';
 
@@ -28,7 +27,11 @@ class _PaymentMethodState extends State<PaymentMethod> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 18.0),
               child: Center(
-                child: boldTextBlackColor('Payment'),
+                child: Text(
+                  'Payment',
+                  style: boldTextBlackColor,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
             tabSelectorForGateway(),

@@ -4,9 +4,9 @@ import 'package:smiles/BottomNavBar/Appointment/SelectDoctorBooking/selectDentis
 import 'package:smiles/BottomNavBar/Appointment/appointment.dart';
 import 'package:smiles/BottomNavBar/Home/components/ChooseYourPreffered/stackofChoosePreffered.dart';
 import 'package:smiles/models/topDentist.dart';
-import 'package:smiles/widgets/boldTextBlueColor.dart';
+import 'package:smiles/style.dart';
 import 'package:smiles/widgets/build_MenuSideMenuData.dart';
-import 'package:smiles/widgets/simpleText.dart';
+
 import 'components/quickTreatMentTile.dart';
 
 class Home extends StatefulWidget {
@@ -40,13 +40,14 @@ class _HomeState extends State<Home> {
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 20),
-                        child: boldandSimpleText(
+                        child: Text(
                           'Just Smile\n',
+                          style: boldandSimpleBlueText,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 16, left: 10),
-                        child: simpleText('Choose Your Prefered'),
+                        child: Text('Choose Your Prefered', style: simpleText),
                       )
                     ],
                   ),
@@ -134,12 +135,18 @@ class _HomeState extends State<Home> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 18, bottom: 16),
-                    child: simpleText('Quick Treatments'),
+                    child: Text(
+                      'Quick Treatments',
+                      style: simpleText,
+                    ),
                   ),
                   QuickTreatmentTile(),
                   Padding(
                     padding: const EdgeInsets.only(left: 10, top: 10),
-                    child: simpleText('Top Dentist'),
+                    child: Text(
+                      'Top Dentist',
+                      style: simpleText,
+                    ),
                   ),
                   Expanded(
                       child: Container(

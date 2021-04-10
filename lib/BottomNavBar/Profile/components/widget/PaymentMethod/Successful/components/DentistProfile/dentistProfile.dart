@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smiles/widgets/simpleRichText.dart';
-
+import 'package:smiles/style.dart';
 import 'components/mediaDrProfile.dart';
 
 class DentistProfile extends StatelessWidget {
@@ -104,7 +103,10 @@ class DentistProfile extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        simpleBlackText('Media'),
+                        Text(
+                          'Media',
+                          style: simpleText,
+                        ),
                         SizedBox(
                           height: 10,
                         ),
@@ -112,7 +114,10 @@ class DentistProfile extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        simpleBlackText('About'),
+                        Text(
+                          'About',
+                          style: simpleText,
+                        ),
                         SizedBox(
                           height: 10,
                         ),

@@ -2,12 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smiles/Onboarding_Screens/Verify_Number/verify_number.dart';
 import 'package:smiles/responsive.dart';
+import 'package:smiles/style.dart';
 import 'package:smiles/widgets/custom_TextButton.dart';
 
 import 'package:smiles/widgets/custom_button.dart';
 import 'package:smiles/widgets/custom_rich_text.dart';
-import 'package:smiles/widgets/simpleBlueText.dart';
-import 'package:smiles/widgets/simpleRichText.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -69,7 +68,10 @@ class WelcomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        simpleBlackText('Read our'),
+                        Text(
+                          'Read our',
+                          style: simpleText,
+                        ),
 
                         /*
 
@@ -80,8 +82,14 @@ class WelcomeScreen extends StatelessWidget {
                             onTap: () {
                               print('Privacy Policy pressed');
                             },
-                            child: simpleBlueText(' privacyPolicy')),
-                        simpleBlackText("Tap 'Accept "),
+                            child: Text(
+                              ' privacyPolicy',
+                              style: simpleBlueText,
+                            )),
+                        Text(
+                          "Tap 'Accept ",
+                          style: simpleText,
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -90,7 +98,10 @@ class WelcomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        simpleBlackText("and Continue'  "),
+                        Text(
+                          "and Continue'  ",
+                          style: simpleText,
+                        ),
 
                         /*
 
@@ -101,8 +112,9 @@ class WelcomeScreen extends StatelessWidget {
                           onTap: () {
                             print('Terms and services clicked');
                           },
-                          child: simpleBlueText(
+                          child: Text(
                             'Terms and Services',
+                            style: simpleBlueText,
                           ),
                         ),
                       ],
@@ -215,7 +227,10 @@ class WelcomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        simpleBlackText('Read our'),
+                        Text(
+                          'Read our',
+                          style: simpleText,
+                        ),
 
                         /*
                      
@@ -226,8 +241,14 @@ class WelcomeScreen extends StatelessWidget {
                             onTap: () {
                               print('Privacy Policy pressed');
                             },
-                            child: simpleBlueText(' privacyPolicy')),
-                        simpleBlackText("Tap 'Accept "),
+                            child: Text(
+                              ' privacyPolicy',
+                              style: simpleBlueText,
+                            )),
+                        Text(
+                          "Tap 'Accept ",
+                          style: simpleText,
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -236,7 +257,10 @@ class WelcomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        simpleBlackText("and Continue'  "),
+                        Text(
+                          "and Continue'  ",
+                          style: simpleText,
+                        ),
 
                         /*
                      
@@ -247,8 +271,9 @@ class WelcomeScreen extends StatelessWidget {
                           onTap: () {
                             print('Terms and services clicked');
                           },
-                          child: simpleBlueText(
+                          child: Text(
                             'Terms and Services',
+                            style: simpleBlueText,
                           ),
                         ),
                       ],
