@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/LoginandSignUp/SignUp/components/signUpbody.dart';
 import 'package:smiles/LoginandSignUp/components/cutomRoundedButton.dart';
+import 'package:smiles/LoginandSignUp/login/components/already_have_account.dart';
 import 'package:smiles/LoginandSignUp/login/components/roundedPasswordTextField.dart';
 import 'package:smiles/LoginandSignUp/login/components/roundedTextField.dart';
 import 'package:smiles/LoginandSignUp/login/components/textFieldContainer.dart';
+import 'package:smiles/LoginandSignUp/login/login.dart';
 import 'package:smiles/constants.dart';
 import 'package:smiles/style.dart';
 
@@ -47,13 +49,34 @@ class SignUp extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: size.height * 0.03,
               ),
               RoundedButton(
                 clr: kPrimaryColor,
-                press: () {},
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Login(),
+                    ),
+                  );
+                },
                 text: "Sign Up",
                 textColor: Colors.white,
+              ),
+              SizedBox(
+                height: size.height * 0.03,
+              ),
+              AlreadyHaveanAccount(
+                login: false,
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Login(),
+                    ),
+                  );
+                },
               )
             ],
           ),
