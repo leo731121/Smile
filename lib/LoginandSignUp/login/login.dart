@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/Invoice/invoice.dart';
 import 'package:smiles/LoginandSignUp/SignUp/signUp.dart';
 import 'package:smiles/LoginandSignUp/components/cutomRoundedButton.dart';
 import 'package:smiles/LoginandSignUp/login/components/roundedTextField.dart';
@@ -47,7 +48,14 @@ class Login extends StatelessWidget {
               clr: kPrimaryColor,
               text: 'LOGIN',
               textColor: Colors.white,
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Invoice(),
+                  ),
+                );
+              },
             ),
             SizedBox(
               height: 10,

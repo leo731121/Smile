@@ -22,6 +22,7 @@ class Home extends StatelessWidget {
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation);
             return MaterialApp(
+              debugShowCheckedModeBanner: false,
               // locale: DevicePreview.locale(context), // Add the locale here
               // builder: DevicePreview.appBuilder, // Add the builder here
               home: SplashScreen(),
