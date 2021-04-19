@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/size_config.dart';
 
 Widget customButton(String text, Function press) {
   return GestureDetector(
     onTap: press,
     child: Container(
-      height: 50,
-      width: 250,
+      height: 6 * SizeConfig.heightMultiplier,
+      width: 60 *
+          (SizeConfig.isMobilePortrait
+              ? SizeConfig.widthMultiplier
+              : SizeConfig.heightMultiplier),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(360),
         color: Color(0xff00BFFF),
@@ -16,7 +20,8 @@ Widget customButton(String text, Function press) {
       child: Center(
           child: Text(
         text,
-        style: TextStyle(color: Colors.white, fontSize: 20),
+        style: TextStyle(
+            color: Colors.white, fontSize: 2.5 * SizeConfig.textMultiplier),
       )),
     ),
   );

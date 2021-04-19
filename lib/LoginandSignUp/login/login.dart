@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:smiles/Invoice/invoice.dart';
 import 'package:smiles/LoginandSignUp/SignUp/signUp.dart';
 import 'package:smiles/LoginandSignUp/components/cutomRoundedButton.dart';
 import 'package:smiles/LoginandSignUp/login/components/roundedTextField.dart';
+import 'package:smiles/Onboarding_Screens/Verify_Number/verify_number.dart';
 import 'package:smiles/constants.dart';
+import 'package:smiles/size_config.dart';
 import 'package:smiles/style.dart';
 
 import 'components/already_have_account.dart';
@@ -16,61 +17,67 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: LoginBody(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'LOGIN',
-              style: loginTextstyle,
-            ),
-            Center(
-              child: Image.asset('assets/images/login-min-min.jpg'),
-            ),
-            TextFieldContainer(
-              child: RoundedInputField(
-                hintText: 'Your Email',
-                icon: Icons.person,
-                onChanged: (value) {},
+      body: Container(
+        width: 100 *
+            (SizeConfig.isMobilePortrait
+                ? SizeConfig.widthMultiplier
+                : SizeConfig.heightMultiplier),
+        child: LoginBody(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'LOGIN',
+                style: loginTextstyle,
               ),
-            ),
-            TextFieldContainer(
-              child: RoundedPasswordTextField(
-                password: 'Password',
-                onChanged: (value) {},
+              Center(
+                child: Image.asset('assets/images/login-min-min.jpg'),
               ),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            RoundedButton(
-              clr: kPrimaryColor,
-              text: 'LOGIN',
-              textColor: Colors.white,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Invoice(),
-                  ),
-                );
-              },
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            AlreadyHaveanAccount(
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SignUp(),
-                  ),
-                );
-              },
-            ),
-          ],
+              TextFieldContainer(
+                child: RoundedInputField(
+                  hintText: 'Your Email',
+                  icon: Icons.person,
+                  onChanged: (value) {},
+                ),
+              ),
+              TextFieldContainer(
+                child: RoundedPasswordTextField(
+                  password: 'Password',
+                  onChanged: (value) {},
+                ),
+              ),
+              SizedBox(
+                height: 2.5 * SizeConfig.heightMultiplier,
+              ),
+              RoundedButton(
+                clr: kPrimaryColor,
+                text: 'LOGIN',
+                textColor: Colors.white,
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VerifyNumber(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 1 * SizeConfig.heightMultiplier,
+              ),
+              AlreadyHaveanAccount(
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignUp(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

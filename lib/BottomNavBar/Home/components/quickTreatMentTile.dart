@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/models/quickTreatments.dart';
+import 'package:smiles/size_config.dart';
 
 class QuickTreatmentTile extends StatelessWidget {
   const QuickTreatmentTile({
@@ -9,7 +10,7 @@ class QuickTreatmentTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 30 * SizeConfig.heightMultiplier,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: quickTreatments.length,
@@ -17,7 +18,7 @@ class QuickTreatmentTile extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              width: 150,
+              width: 45 * SizeConfig.widthMultiplier,
               decoration: BoxDecoration(
                 color: quickTreatments[index].clr,
                 borderRadius: BorderRadius.circular(16),
@@ -41,13 +42,13 @@ class QuickTreatmentTile extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 30,
-                    left: 40,
+                    bottom: 10,
+                    left: 10,
                     child: Text(
                       quickTreatments[index].name,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 3 * SizeConfig.textMultiplier,
                           fontWeight: FontWeight.bold),
                     ),
                   ),

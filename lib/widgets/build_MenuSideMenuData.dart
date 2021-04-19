@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/BottomNavBar/Appointment/Upcoming/upcoming.dart';
 import 'package:smiles/BottomNavBar/Appointment/appointment.dart';
-import 'package:smiles/BottomNavBar/Home/home.dart';
 import 'package:smiles/BottomNavBar/Profile/components/widget/PaymentMethod/paymentMethod.dart';
 import 'package:smiles/pages/HelpAndSupport/helpAndSupport.dart';
 import 'package:smiles/pages/Settings/settings.dart';
@@ -41,14 +40,7 @@ class BuildMenuSideMenuData extends StatelessWidget {
           BuildSideMenuTileWidget(
             title: 'Home',
             iconData: (Icons.home),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Home(),
-                ),
-              );
-            },
+            onTap: () {},
           ),
           BuildSideMenuTileWidget(
             title: 'BookAppointment',

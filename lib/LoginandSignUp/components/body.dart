@@ -3,17 +3,17 @@ import 'package:smiles/LoginandSignUp/SignUp/signUp.dart';
 import 'package:smiles/LoginandSignUp/components/cutomRoundedButton.dart';
 import 'package:smiles/LoginandSignUp/login/login.dart';
 import 'package:smiles/constants.dart';
+import 'package:smiles/size_config.dart';
 import 'package:smiles/style.dart';
 
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Container(
-        height: size.height,
-        width: size.width,
+        height: 100 * SizeConfig.heightMultiplier,
+        width: 100 * SizeConfig.widthMultiplier,
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -22,7 +22,7 @@ class Body extends StatelessWidget {
               left: 0,
               child: Image.asset(
                 'assets/images/main_top.png',
-                width: size.width * 0.3,
+                width: 30 * SizeConfig.widthMultiplier,
               ),
             ),
             Positioned(
@@ -30,37 +30,40 @@ class Body extends StatelessWidget {
               left: 0,
               child: Image.asset(
                 'assets/images/main_bottom.png',
-                width: size.width * 0.2,
+                width: 20 * SizeConfig.widthMultiplier,
               ),
             ),
             Positioned(
-              top: 50,
-              right: -20,
-              child: Image.asset(
-                'assets/images/signinScreen.png',
-                height: size.height * 0.3,
-              ),
-            ),
-            Positioned(
-              top: 250,
-              child: Text(
-                'Smile',
-                style: appNameTextStyle,
-              ),
-            ),
-            Positioned(
-              top: 320,
-              left: 160,
-              child: Text(
-                'Brings together',
-                style: appsubNameTextStyle,
-              ),
-            ),
-            Positioned(
-              top: 370,
+              top: 100,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Image.asset(
+                    'assets/images/signinScreen.png',
+                    height: 30 * SizeConfig.heightMultiplier,
+                  ),
+                  Stack(
+                    children: [
+                      Positioned(
+                        child: Text(
+                          'Smile',
+                          style: appNameTextStyle,
+                        ),
+                      ),
+                      Positioned(
+                        top: 55,
+                        left: 15,
+                        child: Text(
+                          'Brings together',
+                          style: appsubNameTextStyle,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4 * SizeConfig.heightMultiplier,
+                  ),
                   RoundedButton(
                     press: () {
                       Navigator.push(

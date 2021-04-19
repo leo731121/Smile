@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/size_config.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
@@ -13,11 +14,9 @@ class RoundedButton extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return Container(
-      height: size.height * 0.07,
-      width: size.width * 0.8,
+      height: 7 * SizeConfig.heightMultiplier,
+      width: 80 * SizeConfig.widthMultiplier,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: ElevatedButton(
@@ -29,7 +28,8 @@ class RoundedButton extends StatelessWidget {
           onPressed: press,
           child: Text(
             text,
-            style: TextStyle(color: textColor, fontSize: 17),
+            style: TextStyle(
+                color: textColor, fontSize: 3.5 * SizeConfig.textMultiplier),
           ),
         ),
       ),

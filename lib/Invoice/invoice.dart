@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:smiles/Invoice/components/bgShape.dart';
 import 'package:smiles/LoginandSignUp/components/cutomRoundedButton.dart';
+import 'package:smiles/Onboarding_Screens/Verify_Number/verify_number.dart';
 import 'package:smiles/constants.dart';
 import 'package:smiles/style.dart';
 
@@ -110,7 +111,12 @@ class Invoice extends StatelessWidget {
                     Center(
                       child: RoundedButton(
                         clr: kPrimaryColor,
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => VerifyNumber()));
+                        },
                         text: "Download",
                         textColor: Colors.white,
                       ),

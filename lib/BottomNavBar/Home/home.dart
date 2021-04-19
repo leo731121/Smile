@@ -4,6 +4,7 @@ import 'package:smiles/BottomNavBar/Appointment/SelectDoctorBooking/selectDentis
 import 'package:smiles/BottomNavBar/Appointment/appointment.dart';
 import 'package:smiles/BottomNavBar/Home/components/ChooseYourPreffered/stackofChoosePreffered.dart';
 import 'package:smiles/models/topDentist.dart';
+import 'package:smiles/size_config.dart';
 import 'package:smiles/style.dart';
 import 'package:smiles/widgets/build_MenuSideMenuData.dart';
 
@@ -30,8 +31,10 @@ class _HomeState extends State<Home> {
             scrollDirection: Axis.vertical,
             child: Container(
               color: Colors.white,
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
+              height: 100 *
+                  (SizeConfig.isMobilePortrait
+                      ? SizeConfig.heightMultiplier
+                      : SizeConfig.widthMultiplier),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -46,7 +49,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 16, left: 10),
+                        padding: const EdgeInsets.only(left: 10),
                         child: Text('Choose Your Prefered', style: simpleText),
                       )
                     ],
@@ -55,30 +58,6 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.only(top: 8, bottom: 16, left: 4),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      //   child: Row(
-                      //     children: [
-                      //       Padding(
-                      //         padding:
-                      //             const EdgeInsets.symmetric(horizontal: 8),
-                      //         child: chooseYourPreferedTile('My \nAppointments',
-                      //             Icons.calendar_today, Colors.blue),
-                      //       ),
-                      //       Padding(
-                      //         padding:
-                      //             const EdgeInsets.symmetric(horizontal: 8),
-                      //         child: chooseYourPreferedTile(
-                      //             'Quick \nTreatments',
-                      //             Icons.local_hospital,
-                      //             Colors.red),
-                      //       ),
-                      //       Padding(
-                      //         padding:
-                      //             const EdgeInsets.symmetric(horizontal: 8),
-                      //         child: chooseYourPreferedTile('Nearby Dentist',
-                      //             Icons.location_on_outlined, Colors.green),
-                      //       )
-                      //     ],
-                      //   ),
                       child: Row(
                         children: [
                           InkWell(
@@ -96,7 +75,7 @@ class _HomeState extends State<Home> {
                                 Colors.red),
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 1.7 * SizeConfig.widthMultiplier,
                           ),
                           InkWell(
                             onTap: () {
@@ -113,7 +92,7 @@ class _HomeState extends State<Home> {
                                 Colors.blueGrey),
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 1.7 * SizeConfig.widthMultiplier,
                           ),
                           InkWell(
                             onTap: () {
@@ -149,94 +128,95 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Expanded(
-                      child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: ListView.builder(
-                        itemCount: topDoctors.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              margin: EdgeInsets.symmetric(
-                                horizontal: 10,
-                              ),
-                              height: 90,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey,
-                                      offset: Offset(1.0, 1.0),
-                                      blurRadius: 3),
-                                ],
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    children: [
-                                      CircleAvatar(
-                                        radius: 30,
-                                        backgroundImage: AssetImage(
-                                            topDoctors[index].imgPath),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            topDoctors[index].name,
-                                            style: TextStyle(
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w400),
-                                          ),
-                                          Text(
-                                            topDoctors[index].doctortype,
-                                            style:
-                                                TextStyle(color: Colors.grey),
-                                          ),
-                                          Row(
-                                            children: [
-                                              Icon(
-                                                Icons.location_on,
-                                                size: 12,
-                                              ),
-                                              Text(topDoctors[index].location)
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      Spacer(),
-                                      Column(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 20),
-                                            child: Text(
-                                              topDoctors[index].rating,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: ListView.builder(
+                          itemCount: topDoctors.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                margin: EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                ),
+                                height: 90,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey,
+                                        offset: Offset(1.0, 1.0),
+                                        blurRadius: 3),
+                                  ],
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        CircleAvatar(
+                                          radius: 30,
+                                          backgroundImage: AssetImage(
+                                              topDoctors[index].imgPath),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              topDoctors[index].name,
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w400),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Icon(Icons.arrow_forward_ios)
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ],
+                                            Text(
+                                              topDoctors[index].doctortype,
+                                              style:
+                                                  TextStyle(color: Colors.grey),
+                                            ),
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.location_on,
+                                                  size: 12,
+                                                ),
+                                                Text(topDoctors[index].location)
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Spacer(),
+                                        Column(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 20),
+                                              child: Text(
+                                                topDoctors[index].rating,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Icon(Icons.arrow_forward_ios)
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          );
-                        }),
-                  )),
+                            );
+                          }),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -280,45 +260,43 @@ class TopBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Center(
-          child: Container(
-            height: 40,
-            width: 250,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  offset: Offset(0.0, 1.0), //(x,y)
-                  blurRadius: 6.0,
+        Container(
+          height: 6 * SizeConfig.heightMultiplier,
+          width: 68 *
+              (SizeConfig.isMobilePortrait
+                  ? SizeConfig.widthMultiplier
+                  : SizeConfig.heightMultiplier),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0.0, 1.0), //(x,y)
+                blurRadius: 6.0,
+              ),
+            ],
+          ),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: 'Search Dentist',
+              hintStyle: TextStyle(fontSize: 14, color: Colors.grey[400]),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(40),
                 ),
-              ],
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search Dentist',
-                  hintStyle: TextStyle(fontSize: 15),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(40),
-                    ),
-                  ),
-                ),
-                keyboardType: TextInputType.name,
               ),
             ),
+            keyboardType: TextInputType.name,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(right: 20, left: 25),
+          padding: const EdgeInsets.only(right: 7, left: 7),
           child: GestureDetector(
             onTap: () => {print('profile image clicked')},
             child: CircleAvatar(
-              radius: 24.8,
+              radius: 22,
               backgroundImage:
                   AssetImage('assets/images/Smile Dental Logo.png'),
             ),
