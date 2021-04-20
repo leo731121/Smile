@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/size_config.dart';
 
 class SubmitButtonusingIcon extends StatelessWidget {
   const SubmitButtonusingIcon({
@@ -12,15 +13,15 @@ class SubmitButtonusingIcon extends StatelessWidget {
       children: [
         Center(
           child: Container(
-            height: 50,
-            width: 200,
+            height: 8 * SizeConfig.heightMultiplier,
+            width: 60 * SizeConfig.widthMultiplier,
             child: GestureDetector(
               onTap: press,
               child: Container(
-                height: 50,
-                width: 200,
+                height: 8 * SizeConfig.heightMultiplier,
+                width: 20 * SizeConfig.widthMultiplier,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(360),
+                  borderRadius: BorderRadius.circular(90),
                   color: Color(0xff00BFFF),
                   boxShadow: [
                     BoxShadow(
@@ -32,7 +33,9 @@ class SubmitButtonusingIcon extends StatelessWidget {
                 child: Center(
                   child: Text(
                     'Finish',
-                    style: TextStyle(color: Colors.white, fontSize: 17),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 3 * SizeConfig.textMultiplier),
                   ),
                 ),
               ),
@@ -40,10 +43,10 @@ class SubmitButtonusingIcon extends StatelessWidget {
           ),
         ),
         Positioned(
-          right: 120,
-          top: 5,
+          right: 22 * SizeConfig.widthMultiplier,
+          top: 1 * SizeConfig.heightMultiplier,
           child: CircleAvatar(
-            radius: 21,
+            radius: 6 * SizeConfig.imageSizeMultiplier,
             backgroundColor: Colors.white,
             child: Icon(Icons.done),
           ),

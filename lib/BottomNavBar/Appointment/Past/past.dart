@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/size_config.dart';
 
 class Past extends StatefulWidget {
   @override
@@ -31,8 +32,8 @@ class _PastState extends State<Past> {
           children: [
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height - 400,
+                width: 100 * SizeConfig.widthMultiplier,
+                height: 100 * SizeConfig.widthMultiplier,
                 child: PageView.builder(
                     onPageChanged: (value) {
                       setState(
@@ -62,14 +63,14 @@ class _PastState extends State<Past> {
         }
         return Center(
           child: SizedBox(
-            height: Curves.easeOut.transform(value) * 400,
-            width: Curves.easeOut.transform(value) * 400,
+            height: Curves.easeOut.transform(value) * 300,
+            width: Curves.easeOut.transform(value) * 300,
             child: child,
           ),
         );
       },
       child: Container(
-        width: MediaQuery.of(context).size.width - 20,
+        width: 90 * SizeConfig.widthMultiplier,
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
@@ -96,11 +97,11 @@ class _PastState extends State<Past> {
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.symmetric(vertical: 5),
                 child: Row(
                   children: [
                     CircleAvatar(
-                      radius: 25,
+                      radius: 5 * SizeConfig.imageSizeMultiplier,
                       backgroundColor: Colors.white,
                       child: CircleAvatar(
                         radius: 24,
@@ -119,13 +120,6 @@ class _PastState extends State<Past> {
                 ),
               ),
               appointmentCardData(),
-              Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 25),
-                  child: Column(
-                    children: [
-                      popUpAppointmentButtonPutData(),
-                    ],
-                  )),
             ],
           ),
         ),
@@ -161,7 +155,6 @@ class _PastState extends State<Past> {
               iconData,
               color: Colors.white,
             ),
-            SizedBox(width: 5),
             Text(
               detail,
               style: TextStyle(color: Colors.white),
@@ -169,45 +162,6 @@ class _PastState extends State<Past> {
           ],
         )
       ],
-    );
-  }
-
-  Widget popUpAppointmentButtonPutData() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        popUpAppointmentButton('Cancel', 0),
-        popUpAppointmentButton('Chat Now', 1),
-      ],
-    );
-  }
-
-  Widget popUpAppointmentButton(String text, int index) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          selectedindex = index;
-          selectedindex == 0 ? print('Cancel button press') : print('Chat Now');
-        });
-      },
-      child: Container(
-        height: 25,
-        width: 80,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(4),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey, blurRadius: 2, offset: Offset(0.0, 2.0))
-          ],
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/BottomNavBar/Home/components/quickTreatMentTile.dart';
 import 'package:smiles/BottomNavBar/Profile/components/widget/description.dart';
+import 'package:smiles/size_config.dart';
 
 import 'components/profileimageAndBGimage.dart';
 import 'components/widget/commentTile.dart';
@@ -29,7 +30,10 @@ class Profile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       drNameAndType('Erick Su', 'Orthoantist'),
-                      followAndLocation('♥', '📍', 'Follow', 'Banglore'),
+                      followAndLocation(
+                        '♥',
+                        'Follow',
+                      ),
                     ],
                   ),
                 ),
@@ -40,14 +44,15 @@ class Profile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       descrption(
-                        'Lorem ipsum dolor sit amet, consectetur \nadipisimg elit.In egetas velit eget metus\nsemper fringilla.',
+                        'Lorem ipsum dolor sit amet, consectetur adipisimg elit.In egetas velit eget metus semper fringilla.',
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 12.0),
                         child: Text(
                           'Welcome to Smile',
-                          style:
-                              TextStyle(color: Colors.blue[400], fontSize: 15),
+                          style: TextStyle(
+                              color: Colors.blue[400],
+                              fontSize: 1.8 * SizeConfig.textMultiplier),
                         ),
                       ),
                       Padding(
@@ -64,7 +69,7 @@ class Profile extends StatelessWidget {
                                 'assets/images/welcome13.jpg',
                               ),
                               SizedBox(
-                                width: 12,
+                                width: 2 * SizeConfig.widthMultiplier,
                               ),
                               experianceListTile(
                                 'assets/images/welcome13.jpg',

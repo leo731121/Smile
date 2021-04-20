@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/size_config.dart';
 
 class ChatBox extends StatelessWidget {
   @override
@@ -15,8 +16,8 @@ class ChatBox extends StatelessWidget {
             //here we design Chat bar
             Center(
               child: Container(
-                height: 60,
-                width: MediaQuery.of(context).size.width - 20,
+                height: 7 * SizeConfig.heightMultiplier,
+                width: 90 * SizeConfig.widthMultiplier,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   color: Colors.white,
@@ -42,14 +43,17 @@ class ChatBox extends StatelessWidget {
                           children: [
                             Text(
                               name,
-                              style: TextStyle(fontSize: 18),
+                              style: TextStyle(
+                                  fontSize: 2 * SizeConfig.textMultiplier),
                             ),
                             SizedBox(
                               height: 5,
                             ),
                             Text(
                               status,
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 1.5 * SizeConfig.textMultiplier),
                             ),
                           ],
                         ),
@@ -73,13 +77,15 @@ class ChatBox extends StatelessWidget {
                 child: Center(
                   child: Text(
                     'Pre Appoinmtment',
-                    style: TextStyle(color: Colors.white, fontSize: 8),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 0.8 * SizeConfig.textMultiplier),
                   ),
                 ),
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 1 * SizeConfig.textMultiplier,
             ),
             Expanded(
               child: Stack(
@@ -88,7 +94,7 @@ class ChatBox extends StatelessWidget {
                     bottom: 50,
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 20),
-                      height: 40,
+                      height: 5 * SizeConfig.textMultiplier,
                       width: MediaQuery.of(context).size.width - 60,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(32),
@@ -129,8 +135,8 @@ class ChatBox extends StatelessWidget {
                     right: 10,
                     bottom: 50,
                     child: Container(
-                      height: 40,
-                      width: 40,
+                      height: 4 * SizeConfig.textMultiplier,
+                      width: 4 * SizeConfig.textMultiplier,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           boxShadow: [
@@ -140,7 +146,7 @@ class ChatBox extends StatelessWidget {
                                 blurRadius: 2)
                           ]),
                       child: CircleAvatar(
-                        radius: 20,
+                        radius: 2 * SizeConfig.imageSizeMultiplier,
                         backgroundColor: Colors.white,
                         child: Icon(
                           Icons.send,

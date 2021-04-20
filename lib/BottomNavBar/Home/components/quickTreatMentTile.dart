@@ -11,6 +11,10 @@ class QuickTreatmentTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 30 * SizeConfig.heightMultiplier,
+      width: 100 *
+          (SizeConfig.isMobilePortrait
+              ? SizeConfig.widthMultiplier
+              : SizeConfig.heightMultiplier),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: quickTreatments.length,
@@ -18,7 +22,10 @@ class QuickTreatmentTile extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              width: 45 * SizeConfig.widthMultiplier,
+              width: 45 *
+                  (SizeConfig.isMobilePortrait
+                      ? SizeConfig.widthMultiplier
+                      : SizeConfig.heightMultiplier),
               decoration: BoxDecoration(
                 color: quickTreatments[index].clr,
                 borderRadius: BorderRadius.circular(16),
@@ -37,7 +44,7 @@ class QuickTreatmentTile extends StatelessWidget {
                     left: 40,
                     child: CircleAvatar(
                       backgroundImage: AssetImage(quickTreatments[index].pic),
-                      radius: 35,
+                      radius: 10 * SizeConfig.imageSizeMultiplier,
                       backgroundColor: Colors.transparent,
                     ),
                   ),
@@ -48,7 +55,7 @@ class QuickTreatmentTile extends StatelessWidget {
                       quickTreatments[index].name,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 3 * SizeConfig.textMultiplier,
+                          fontSize: 2 * SizeConfig.textMultiplier,
                           fontWeight: FontWeight.bold),
                     ),
                   ),

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:smiles/models/commentsAndReviews.dart';
+import 'package:smiles/size_config.dart';
 
 class CommentSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 200,
+        height: 30 * SizeConfig.heightMultiplier,
         child: ListView.builder(
             itemCount: reviews.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: EdgeInsets.all(8),
                 child: Container(
-                  width: MediaQuery.of(context).size.width - 30,
+                  width: 90 * SizeConfig.widthMultiplier,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -23,7 +24,7 @@ class CommentSection extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CircleAvatar(
-                              radius: 25,
+                              radius: 4 * SizeConfig.imageSizeMultiplier,
                               backgroundImage:
                                   AssetImage(reviews[index].imgPath),
                             ),
@@ -53,7 +54,9 @@ class CommentSection extends StatelessWidget {
                       ),
                       Text(
                         reviews[index].comment,
-                        style: TextStyle(fontSize: 16, letterSpacing: 1),
+                        style: TextStyle(
+                            fontSize: 1.6 * SizeConfig.textMultiplier,
+                            letterSpacing: 1),
                       ),
                     ],
                   ),

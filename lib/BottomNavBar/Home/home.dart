@@ -26,90 +26,31 @@ class _HomeState extends State<Home> {
       type: SideMenuType.shrikNRotate,
       menu: BuildMenuSideMenuData(),
       child: Scaffold(
-          appBar: buildAppBar(),
-          body: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Container(
-              color: Colors.white,
-              height: 100 *
-                  (SizeConfig.isMobilePortrait
-                      ? SizeConfig.heightMultiplier
-                      : SizeConfig.widthMultiplier),
+        appBar: buildAppBar(),
+        body: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 20),
-                        child: Text(
-                          'Just Smile\n',
-                          style: boldandSimpleBlueText,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Text('Choose Your Prefered', style: simpleText),
-                      )
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 20),
+                    child: Text(
+                      'Just Smile\n',
+                      style: boldandSimpleBlueText,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text('Choose Your Prefered', style: simpleText),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8, bottom: 16, left: 4),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Appointment(),
-                                ),
-                              );
-                            },
-                            child: tileForPrference(
-                                'My\nAppointment',
-                                'assets/icons/PngItem_422926(1).png',
-                                Colors.red),
-                          ),
-                          SizedBox(
-                            width: 1.7 * SizeConfig.widthMultiplier,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SelectDentist(),
-                                ),
-                              );
-                            },
-                            child: tileForPrference(
-                                'Quick\nTreatments',
-                                'assets/icons/medicine-2801025_640.png',
-                                Colors.blueGrey),
-                          ),
-                          SizedBox(
-                            width: 1.7 * SizeConfig.widthMultiplier,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SelectDentist(),
-                                ),
-                              );
-                            },
-                            child: tileForPrference(
-                                'Nearby\nPlaces',
-                                'assets/icons/nearbydentist.png',
-                                Colors.blue[800]),
-                          ),
-                        ],
-                      ),
+                    child: Row(
+                      children: [
+                        ChoosePreference(),
+                      ],
                     ),
                   ),
                   Padding(
@@ -127,100 +68,105 @@ class _HomeState extends State<Home> {
                       style: simpleText,
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: ListView.builder(
-                          itemCount: topDoctors.length,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                margin: EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                ),
-                                height: 90,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Colors.grey,
-                                        offset: Offset(1.0, 1.0),
-                                        blurRadius: 3),
-                                  ],
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 30,
-                                          backgroundImage: AssetImage(
-                                              topDoctors[index].imgPath),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              topDoctors[index].name,
-                                              style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w400),
-                                            ),
-                                            Text(
-                                              topDoctors[index].doctortype,
-                                              style:
-                                                  TextStyle(color: Colors.grey),
-                                            ),
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.location_on,
-                                                  size: 12,
-                                                ),
-                                                Text(topDoctors[index].location)
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                        Spacer(),
-                                        Column(
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 20),
-                                              child: Text(
-                                                topDoctors[index].rating,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Icon(Icons.arrow_forward_ios)
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          }),
-                    ),
-                  ),
                 ],
               ),
             ),
-          )),
+            SliverList(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(
+                      horizontal: 1 * SizeConfig.widthMultiplier,
+                    ),
+                    height: 12 * SizeConfig.heightMultiplier,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 3),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 7 * SizeConfig.imageSizeMultiplier,
+                              backgroundImage:
+                                  AssetImage(topDoctors[index].imgPath),
+                            ),
+                            SizedBox(
+                              width: 3 * SizeConfig.widthMultiplier,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  topDoctors[index].name,
+                                  style: TextStyle(
+                                      fontSize: 2 * SizeConfig.textMultiplier,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                Text(
+                                  topDoctors[index].doctortype,
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize:
+                                          1.5 * SizeConfig.textMultiplier),
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.location_on,
+                                      size: 12,
+                                    ),
+                                    Text(
+                                      topDoctors[index].location,
+                                      style: TextStyle(
+                                          fontSize:
+                                              1.4 * SizeConfig.textMultiplier),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Spacer(),
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20),
+                                  child: Text(
+                                    topDoctors[index].rating,
+                                    style: TextStyle(
+                                        fontSize:
+                                            1.7 * SizeConfig.textMultiplier),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }, childCount: topDoctors.length),
+            ),
+          ],
+        ),
+      ),
     );
   }
 

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/size_config.dart';
 
 Widget experianceListTile(String imgPath) {
   return Container(
-    height: 150,
-    width: 150,
+    height: 25 * SizeConfig.heightMultiplier,
+    width: 40 * SizeConfig.widthMultiplier,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12),
       color: Colors.white,

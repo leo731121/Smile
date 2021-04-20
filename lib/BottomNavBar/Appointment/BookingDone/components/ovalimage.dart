@@ -1,42 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/size_config.dart';
 
-Padding buildOvalimage() {
-  return Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: Stack(
-        children: [
-          ClipOval(
-            clipper: MyClipper(),
-            clipBehavior: Clip.antiAlias,
-            child: Image.asset('assets/images/welcome13.jpg'),
-          ),
-          Positioned(
-            top: 30,
-            left: 40,
+Widget buildOvalimage() {
+  return Stack(
+    children: [
+      ClipOval(
+        clipper: MyClipper(),
+        clipBehavior: Clip.antiAlias,
+        child: Image.asset('assets/images/welcome13.jpg'),
+      ),
+      Positioned(
+        top: 30,
+        left: 40,
+        child: CircleAvatar(
+          radius: 12 * SizeConfig.imageSizeMultiplier,
+          backgroundColor: Colors.white,
+          child: CircleAvatar(
+            radius: 11 * SizeConfig.imageSizeMultiplier,
+            backgroundColor: Colors.blue[400],
             child: CircleAvatar(
-              radius: 40,
-              backgroundColor: Colors.white,
-              child: CircleAvatar(
-                radius: 35,
-                backgroundColor: Colors.blue[400],
-                child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 30,
-                    child: Icon(
-                      Icons.done_outline_outlined,
-                      color: Colors.blue[400],
-                    )),
-              ),
-            ),
+                backgroundColor: Colors.white,
+                radius: 9 * SizeConfig.imageSizeMultiplier,
+                child: Icon(
+                  Icons.done_outline_outlined,
+                  color: Colors.blue[400],
+                )),
           ),
-        ],
-      ));
+        ),
+      ),
+    ],
+  );
 }
 
 class MyClipper extends CustomClipper<Rect> {
   @override
   Rect getClip(Size size) {
-    return Rect.fromLTWH(67, 0, 220, 270);
+    return Rect.fromLTWH(20 * SizeConfig.widthMultiplier, 0,
+        55 * SizeConfig.widthMultiplier, 38 * SizeConfig.heightMultiplier);
   }
 
   @override

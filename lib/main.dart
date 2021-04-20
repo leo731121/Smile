@@ -12,6 +12,7 @@ void main() {
       builder: (context) => Home(),
     ),
   );
+  // runApp(Home());
 }
 
 class Home extends StatelessWidget {

@@ -17,7 +17,7 @@ Widget timetable() {
                 child: drTimeOffering('1 PM', false),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(left: 8, right: 8, top: 10),
                 child: drTimeOffering('3 PM', false),
               ),
               Padding(

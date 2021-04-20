@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smiles/size_config.dart';
 
 class GetOfferingData extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _GetOfferingDataState extends State<GetOfferingData> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -28,7 +29,7 @@ class _GetOfferingDataState extends State<GetOfferingData> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -38,7 +39,7 @@ class _GetOfferingDataState extends State<GetOfferingData> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -61,8 +62,8 @@ class _GetOfferingDataState extends State<GetOfferingData> {
             });
           },
           child: Container(
-            height: 30,
-            width: 130,
+            height: 5 * SizeConfig.heightMultiplier,
+            width: 40 * SizeConfig.widthMultiplier,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
               boxShadow: [
@@ -77,7 +78,7 @@ class _GetOfferingDataState extends State<GetOfferingData> {
                   offerservicename,
                   style: TextStyle(
                     color: index == selectedindex ? Colors.white : Colors.black,
-                    fontSize: 15,
+                    fontSize: 2 * SizeConfig.textMultiplier,
                   ),
                 ),
                 Spacer(),
@@ -85,7 +86,9 @@ class _GetOfferingDataState extends State<GetOfferingData> {
                   imgPath,
                   color:
                       index == selectedindex ? Colors.white : Colors.blue[400],
-                )
+                  height: 12 * SizeConfig.heightMultiplier,
+                  width: 10 * SizeConfig.widthMultiplier,
+                ),
               ],
             ),
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/BottomNavBar/Appointment/appointment.dart';
+import 'package:smiles/LoginandSignUp/components/cutomRoundedButton.dart';
+import 'package:smiles/size_config.dart';
 import 'package:smiles/style.dart';
 
 import 'components/ovalimage.dart';
@@ -23,7 +25,9 @@ class ShowBookedAppointment extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          Padding(padding: EdgeInsets.only(top: 80), child: buildOvalimage()),
+          Padding(
+              padding: EdgeInsets.only(top: 8 * SizeConfig.heightMultiplier),
+              child: buildOvalimage()),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 40),
           ),
@@ -31,32 +35,19 @@ class ShowBookedAppointment extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
           ),
-          ButtonTheme(
-            height: 40,
-            minWidth: 200,
-            child: RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Appointment(),
-                  ),
-                );
-              },
-              elevation: 5,
-              color: Color(0xff00BFFF),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(365),
-              ),
-              child: Text(
-                'Go To My Sppointment',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.normal),
-              ),
-            ),
-          )
+          RoundedButton(
+            clr: Color(0xff00BFFF),
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Appointment(),
+                ),
+              );
+            },
+            text: "Back to Appointment",
+            textColor: Colors.white,
+          ),
         ],
       ),
     );
@@ -68,7 +59,8 @@ class ShowBookedAppointment extends StatelessWidget {
       child: RichText(
         textAlign: TextAlign.center,
         text: TextSpan(
-            style: TextStyle(color: Colors.black, fontSize: 16),
+            style: TextStyle(
+                color: Colors.black, fontSize: 2 * SizeConfig.textMultiplier),
             children: [
               TextSpan(text: 'You booked an appointment with '),
               TextSpan(text: getDoctorName + '\n'),
@@ -82,6 +74,7 @@ class ShowBookedAppointment extends StatelessWidget {
               TextSpan(
                 text: selectedTime,
                 style: TextStyle(
+                  fontSize: 2 * SizeConfig.textMultiplier,
                   color: Colors.blue[400],
                 ),
               ),

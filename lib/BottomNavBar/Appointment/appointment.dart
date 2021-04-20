@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 import 'package:smiles/BottomNavBar/Appointment/SelectDoctorBooking/selectDentist.dart';
 import 'package:smiles/BottomNavBar/Home/home.dart';
+import 'package:smiles/size_config.dart';
 import 'package:smiles/style.dart';
 import 'package:smiles/widgets/build_MenuSideMenuData.dart';
 import 'package:smiles/widgets/custom_button.dart';
@@ -67,22 +68,6 @@ class _AppointmentState extends State<Appointment> {
               Expanded(
                 child: (apptType[selectedindex]),
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 70,
-                ),
-                child: customButton(
-                  'Book Now',
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SelectDentist(),
-                      ),
-                    );
-                  },
-                ),
-              ),
             ],
           ),
         ),
@@ -94,8 +79,8 @@ class _AppointmentState extends State<Appointment> {
     return (Padding(
       padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
       child: Container(
-        height: 40,
-        width: 400,
+        height: 5 * SizeConfig.heightMultiplier,
+        width: 80 * SizeConfig.widthMultiplier,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: Colors.white,
@@ -124,8 +109,8 @@ class _AppointmentState extends State<Appointment> {
             });
           },
           child: Container(
-            height: 40,
-            width: 196,
+            height: 5 * SizeConfig.heightMultiplier,
+            width: 40 * SizeConfig.widthMultiplier,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
               color: index == selectedindex ? Colors.blue[400] : Colors.white,
@@ -135,7 +120,7 @@ class _AppointmentState extends State<Appointment> {
                 text,
                 style: TextStyle(
                     color: index == selectedindex ? Colors.white : Colors.black,
-                    fontSize: 18,
+                    fontSize: 2.5 * SizeConfig.textMultiplier,
                     fontWeight: FontWeight.w300),
               ),
             ),

@@ -17,7 +17,7 @@ TextStyle appsubNameTextStyle = TextStyle(
 );
 
 TextStyle boldTextBlackColor = TextStyle(
-  fontSize: 30,
+  fontSize: 4 * SizeConfig.textMultiplier,
   fontWeight: FontWeight.bold,
 );
 
