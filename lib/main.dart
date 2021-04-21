@@ -1,21 +1,20 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:smiles/Splash_Screen/splash_screen.dart';
-import 'package:smiles/root/rootPage.dart';
+
 import 'package:smiles/size_config.dart';
 
+import 'View/Splash_Screen/splash_screen.dart';
+
 void main() {
-  runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => Home(),
-    ),
-  );
-  // runApp(Home());
+  // runApp(
+  //   DevicePreview(
+  //     enabled: !kReleaseMode,
+  //     builder: (context) => Home(),
+  //   ),
+  // );
+  runApp(Homes());
 }
 
-class Home extends StatelessWidget {
+class Homes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -25,9 +24,9 @@ class Home extends StatelessWidget {
             SizeConfig().init(constraints, orientation);
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              locale: DevicePreview.locale(context), // Add the locale here
-              builder: DevicePreview.appBuilder, // Add the builder here
-              home: RootPage(),
+              // locale: DevicePreview.locale(context), // Add the locale here
+              // builder: DevicePreview.appBuilder, // Add the builder here
+              home: SplashScreen(),
             );
           },
         );

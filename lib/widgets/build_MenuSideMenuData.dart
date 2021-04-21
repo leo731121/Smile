@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:smiles/BottomNavBar/Appointment/Upcoming/upcoming.dart';
-import 'package:smiles/BottomNavBar/Appointment/appointment.dart';
-import 'package:smiles/BottomNavBar/Profile/components/widget/PaymentMethod/paymentMethod.dart';
-import 'package:smiles/pages/HelpAndSupport/helpAndSupport.dart';
-import 'package:smiles/pages/Settings/settings.dart';
-import 'package:smiles/pages/onlineConsultant.dart';
+import 'package:smiles/View/BottomNavBar/Appointment/Upcoming/upcoming.dart';
+import 'package:smiles/View/BottomNavBar/Appointment/appointment.dart';
+import 'package:smiles/View/BottomNavBar/Profile/components/widget/PaymentMethod/paymentMethod.dart';
+import 'package:smiles/View/pages/HelpAndSupport/helpAndSupport.dart';
+import 'package:smiles/View/pages/Settings/settings.dart';
+import 'package:smiles/View/pages/onlineConsultant.dart';
+
 import 'package:smiles/widgets/sideMenutile.dart';
 
 class BuildMenuSideMenuData extends StatelessWidget {
